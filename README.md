@@ -21,7 +21,17 @@ AspNetCoreCodingExamples.sln
 |    |-- DataStructures
 |    |   |-- DTOs
 |    |   |-- Interfaces
+|            |-- IArrayAlgorithms.cs
+|            |-- ICharStringAlgorithms.cs
+|            |-- IDictionaryAlgorithms.cs
+|            |-- IHashSetExamples.cs
+|            |-- IStackQueueExamples.cs
 |    |   |-- Services
+|            |-- ArrayAlgorithms.cs
+|            |-- CharStringAlgorithms.cs
+|            |-- DictionaryAlgorithms.cs
+|            |-- HashSetExamples.cs
+|            |-- StackQueueExamples.cs
 |    |-- ParkingLot
 |        |-- DTOs
 |        |-- Entities
