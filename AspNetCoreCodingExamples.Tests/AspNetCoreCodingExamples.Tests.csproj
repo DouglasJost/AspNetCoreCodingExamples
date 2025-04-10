@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspNetCoreCodingExamples.API\AspNetCoreCodingExamples.API.csproj" />
     <ProjectReference Include="..\AspNetCoreCodingExamples.Domain\AspNetCoreCodingExamples.Domain.csproj" />
   </ItemGroup>
 

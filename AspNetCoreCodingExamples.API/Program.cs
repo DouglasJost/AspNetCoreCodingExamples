@@ -5,6 +5,8 @@ using AspNetCoreCodingExamples.Domain.DataStructures.Interfaces;
 using AspNetCoreCodingExamples.Domain.DataStructures.Services;
 using AspNetCoreCodingExamples.Domain.ParkingLot;
 using AspNetCoreCodingExamples.Domain.ParkingLot.Interfaces;
+using AspNetCoreCodingExamples.Domain.MessageSelector.Interfaces;
+using AspNetCoreCodingExamples.Domain.MessageSelector.Services;
 
 namespace AspNetCoreCodingExamples.API
 {
@@ -27,6 +29,10 @@ namespace AspNetCoreCodingExamples.API
             builder.Services.AddScoped<ICharStringAlgorithms, CharStringAlgorithms>();
             builder.Services.AddScoped<IStackQueueExamples, StackQueueExamples>();
             builder.Services.AddScoped<IHashSetExamples, HashSetExamples>();
+
+            builder.Services.AddTransient<IMessageServiceFactory, MessageServiceFactory>();
+            builder.Services.AddTransient<EmailService>();
+            builder.Services.AddTransient<SmsService>();
 
 
             builder.Services.AddControllers();
