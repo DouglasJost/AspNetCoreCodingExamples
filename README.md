@@ -38,6 +38,16 @@ AspNetCoreCodingExamples.sln
 |        |-- Enums
 |        |-- Interfaces
 |        |-- Services
+|    |-- MessageSelector
+|        |-- DTOs
+|            |-- MessageRequestDto.cs
+|        |-- Interfaces
+|            |-- IMessageService.cs
+|            |-- IMessageServiceFactory.cs
+|        |-- Services
+|            |-- EmailService.cs
+|            |-- SmsService.cs
+|            |-- MessageServiceFactory.cs
 |
 |-- AspNetCoreCodingExamples.Tests          --> xUnit test project for all domain services
      |-- DataStructures
@@ -47,6 +57,7 @@ AspNetCoreCodingExamples.sln
      |   |-- HashSetExamples
      |   |-- StackQueueExamples
      |-- ParkingLot
+     |-- MessageSelector
 ```
 
 ---
@@ -56,6 +67,13 @@ AspNetCoreCodingExamples.sln
 ### ⚖️ Object-Oriented Design
 - Parking Lot Simulation
   - OOP/OOD principles in action (interfaces, services, and inheritance)
+
+### 🔀 Message Selector (Factory Pattern)
+- Demonstration only - does not send real email or SMS
+- Supports sending messages via `Email` or `Sms`
+- Selects correct `IMessageService` based on input
+- DI container configuration for service resolution
+- POST endpoint: `/api/message/send`
 
 ### 📏 Array Algorithms
 - Reverse array (manual & LINQ)
@@ -114,6 +132,16 @@ dotnet test
 }
 ```
 **Response:** `[4, 3, 2, 1]`
+
+**Example:** Send Message
+- `POST /api/message/send`
+```json
+{
+  "Type": "email",
+  "Message": "Sont des mots qui vont tres bien ensemble"
+}
+```
+**Response:** `Message sent successfully via Email`
 
 ---
 
